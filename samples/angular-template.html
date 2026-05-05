@@ -1,0 +1,26 @@
+<!--
+  Style Pastel sample — Angular inline style 형태.
+  - [style]="..."   (property binding)
+  - ngStyle="..."
+-->
+
+<div [style]="'display: flex; flex-direction: column; gap: 12px; padding: 16px; width: 320px; background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 12px;'" >
+    <header ngStyle="display: flex; align-items: center; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid #c7d2fe;">
+        <span
+            [style]="'font-family: Inter, sans-serif; font-size: 13px; font-weight: 600; color: #3730a3; letter-spacing: 0.04em; text-transform: uppercase;'"
+        >Angular Card</span>
+        <button
+            type="button"
+            [style]="'appearance: none; background: transparent; border: none; cursor: pointer; padding: 4px; color: #3730a3; font-size: 14px;'"
+        >× </button>
+    </header>
+    <p ngStyle="font-size: 14px; line-height: 1.5; color: #312e81; margin: 0; white-space: pre-wrap; word-break: keep-all;">
+        Angular property binding과 ngStyle 형태도 동일하게 카테고리 색이 매겨집니다.
+    </p>
+    <div
+        [style]="'display: grid; grid-template-columns: 1fr auto; column-gap: 8px; padding: 8px 0; transition: background-color 150ms ease; cursor: pointer; user-select: none;'"
+    >
+        <span style="font-size: 13px; color: #4338ca;">More</span>
+        <span [style]="'font-size: 12px; color: #6b7280; transform: translateY(1px);'" > → </span>
+    </div>
+</div>

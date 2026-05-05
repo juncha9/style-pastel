@@ -1,0 +1,44 @@
+<!doctype html>
+<!--
+    멀티라인 style 속성 — windowed 증분 재스캔이 멀티라인 본문을 정확히 처리하는지 검증.
+    한 declaration이 여러 줄에 걸친 케이스도 같이 둠 (background gradient).
+-->
+<html>
+<body>
+    <div
+        style="
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-rows: auto;
+            gap: 16px 24px;
+            padding: 24px;
+
+            background: linear-gradient(
+                135deg,
+                rgb(254, 243, 199) 0%,
+                rgb(252, 231, 243) 50%,
+                rgb(219, 234, 254) 100%
+            );
+            border-radius: 16px;
+            box-shadow:
+                0 1px 2px rgba(0, 0, 0, 0.06),
+                0 8px 24px rgba(0, 0, 0, 0.08);
+
+            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #111827;
+
+            transition:
+                transform 200ms ease,
+                box-shadow 200ms ease;
+            transform: translateY(0);
+            cursor: pointer;
+        "
+    >
+        <span style="font-weight: 700;">Card 1</span>
+        <span style="font-weight: 700;">Card 2</span>
+        <span style="font-weight: 700;">Card 3</span>
+    </div>
+</body>
+</html>

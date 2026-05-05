@@ -1,0 +1,78 @@
+{
+    "name": "style-pastel",
+    "displayName": "Style Pastel",
+    "description": "Highlights HTML inline style declarations by category with distinct colors for visual scanning",
+    "version": "0.0.1",
+    "publisher": "alkemic-studio",
+    "license": "MIT",
+    "icon": "icon.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/juncha9/style-pastel.git"
+    },
+    "bugs": {
+        "url": "https://github.com/juncha9/style-pastel/issues"
+    },
+    "homepage": "https://github.com/juncha9/style-pastel#readme",
+    "galleryBanner": {
+        "color": "#1e293b",
+        "theme": "dark"
+    },
+    "engines": {
+        "vscode": "^1.109.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Visualization",
+        "Other"
+    ],
+    "keywords": [
+        "css",
+        "style",
+        "inline-style",
+        "highlight",
+        "category"
+    ],
+    "activationEvents": [
+        "onLanguage:typescriptreact",
+        "onLanguage:javascriptreact",
+        "onLanguage:html",
+        "onLanguage:vue",
+        "onLanguage:svelte",
+        "onLanguage:astro"
+    ],
+    "main": "./dist/extension.js",
+    "contributes": {
+        "configuration": {
+            "title": "Style Pastel",
+            "properties": {
+                "stylePastel.enabled": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable inline-style declaration category highlighting"
+                }
+            }
+        },
+        "commands": [
+            {
+                "command": "stylePastel.toggle",
+                "title": "Toggle Highlighting",
+                "category": "Style Pastel"
+            }
+        ]
+    },
+    "scripts": {
+        "build": "tsup",
+        "watch": "tsup --watch",
+        "typecheck": "tsc --noEmit -p ./",
+        "package": "npx @vscode/vsce package",
+        "publish": "npx @vscode/vsce publish"
+    },
+    "devDependencies": {
+        "@resvg/resvg-js": "^2.6.2",
+        "@types/node": "^22.19.17",
+        "@types/vscode": "^1.109.0",
+        "tsup": "^8.5.1",
+        "typescript": "^5.9.3"
+    }
+}

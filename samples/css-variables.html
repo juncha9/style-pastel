@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Style Pastel — CSS variables</title>
+</head>
+<body>
+    <!-- 선언과 참조가 한 줄에 섞인 케이스 -->
+    <div style="--brand: #ec4899; --brand-fg: #fff; --radius: 12px; --pad: 12px 16px; color: var(--brand-fg); background: var(--brand); padding: var(--pad); border-radius: var(--radius);"></div>
+
+    <!-- var() fallback 안에서도 같은 slate tone -->
+    <div style="color: var(--accent, #6366f1); background-color: var(--surface, white); border: 1px solid var(--line, rgba(0, 0, 0, 0.08));"></div>
+
+    <!-- 중첩된 var() -->
+    <div style="--gap: 16px; --halfGap: calc(var(--gap) / 2); margin: var(--halfGap); gap: var(--gap);"></div>
+
+    <!-- 값 안의 var()만 있고 카테고리 색은 property에만 -->
+    <div style="font-size: var(--fz-base); line-height: var(--lh-base); letter-spacing: var(--ls-tight);"></div>
+</body>
+</html>

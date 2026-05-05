@@ -1,0 +1,58 @@
+---
+const links = [
+    { href: '/', label: 'Home' },
+    { href: '/docs', label: 'Docs' },
+    { href: '/blog', label: 'Blog' },
+];
+const accent = '#f59e0b';
+---
+
+<!--
+    Astro: HTML과 동일한 style="..." 형식.
+    expression interpolation은 attribute value 안에서 `${}` 가 아닌 `{}` 형태로 들어가 매칭에서 제외됨.
+-->
+<header
+    style="
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 12px 24px;
+        background: #ffffff;
+        border-bottom: 1px solid #e5e7eb;
+        font-family: system-ui, sans-serif;
+        font-size: 14px;
+        color: #111827;
+        backdrop-filter: saturate(180%) blur(8px);
+    "
+>
+    <a
+        href="/"
+        style="
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #111827;
+            text-decoration: none;
+        "
+    >
+        <span style={`--dot: ${accent}; display: inline-block; width: 10px; height: 10px; background: var(--dot); border-radius: 50%;`}></span>
+        Brand
+    </a>
+
+    <nav style="display: flex; gap: 12px;">
+        {links.map((link) => (
+            <a
+                href={link.href}
+                style="color: #6b7280; text-decoration: none; padding: 6px 10px; border-radius: 6px; transition: background 120ms ease, color 120ms ease;"
+            >
+                {link.label}
+            </a>
+        ))}
+    </nav>
+</header>

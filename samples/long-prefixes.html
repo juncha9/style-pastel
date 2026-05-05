@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Style Pastel — long property names (longest-prefix matching)</title>
+</head>
+<body>
+    <!-- padding-inline-start, border-top-left-radius 같은 긴 이름이 정확한 카테고리에 떨어지는지 -->
+    <div style="padding-inline-start: 24px; padding-inline-end: 24px; padding-block-start: 12px; padding-block-end: 12px; margin-inline: auto; margin-block: 16px;"></div>
+
+    <div style="border-top-left-radius: 12px; border-top-right-radius: 12px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-inline-start-color: #f472b6; border-block-end-style: dashed; border-image-slice: 30%;"></div>
+
+    <div style="-webkit-mask-image: linear-gradient(black, transparent); -webkit-mask-size: cover; -webkit-mask-position: center; -webkit-mask-repeat: no-repeat; -webkit-text-stroke: 1px black; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;"></div>
+
+    <div style="grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); grid-template-rows: auto 1fr auto; grid-template-areas: 'header header' 'side main' 'footer footer'; grid-auto-flow: row dense; place-self: center stretch;"></div>
+
+    <div style="scroll-snap-type: y mandatory; scroll-snap-align: start; scroll-padding-top: 16px; scroll-margin-bottom: 24px; overscroll-behavior-x: contain; scrollbar-gutter: stable both-edges;"></div>
+
+    <div style="text-decoration-line: underline; text-decoration-style: wavy; text-decoration-color: #f472b6; text-underline-offset: 4px; text-decoration-thickness: 2px; text-emphasis-color: #ec4899; text-emphasis-style: filled circle;"></div>
+
+    <div style="animation-iteration-count: infinite; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); animation-play-state: running; transition-timing-function: ease-in-out; transition-delay: 50ms;"></div>
+</body>
+</html>

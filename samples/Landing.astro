@@ -1,0 +1,54 @@
+---
+// Style Pastel sample — Astro inline style.
+const title = 'Pastel · Astro';
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>{title}</title>
+    </head>
+    <body style=`margin: 0; padding: 0; min-height: 100vh;
+                background: linear-gradient(180deg, #fdf2f8, #fff); color: #111827; font-family: 'Inter', sans-serif;`
+    >
+        <header
+            style=`position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between;
+                   padding: 12px 24px; 
+                   background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(8px); border-bottom: 1px solid #fbcfe8;`
+        >
+            <span style="font-size: 14px; font-weight: 700; letter-spacing: 0.02em; color: #be185d;">
+                {title}
+            </span>
+            <nav style="display: flex; gap: 16px; align-items: center;">
+                <a href="#features"
+                    style="font-size: 13px; color: #831843; text-decoration: none; cursor: pointer; transition: color 120ms ease;"
+                >
+                    Features
+                </a>
+                <a href="#docs"
+                    style="font-size: 13px; color: #831843; text-decoration: none; cursor: pointer;"
+                >
+                    Docs
+                </a>
+            </nav>
+        </header>
+        <main style="display: flex; flex-direction: column; align-items: center; gap: 32px; padding: 64px 24px;">
+            <h1
+                style="font-size: clamp(32px, 5vw, 64px); font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; text-align: center; margin: 0; color: #111827;"
+            > Inline styles, but readable. </h1>
+            <p
+                style="font-size: 16px; line-height: 1.6; color: #4b5563; text-align: center; max-width: 540px; margin: 0; word-break: keep-all;"
+            > 각 declaration이 카테고리별로 색이 입혀져 layout/box/typography/surface/motion이 한눈에 분리됩니다. </p>
+            <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: center;">
+                <a
+                    href="#install"
+                    style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 40px; padding: 0 20px; background: #ec4899; color: #fff; border: none; border-radius: 999px; font-size: 14px; font-weight: 600; text-decoration: none; cursor: pointer; transition: transform 120ms ease, box-shadow 200ms ease; box-shadow: 0 4px 14px rgba(236, 72, 153, 0.35);"
+                > Install </a>
+                <a
+                    href="#source"
+                    style="display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 20px; background: #fff; color: #be185d; border: 1px solid #fbcfe8; border-radius: 999px; font-size: 14px; font-weight: 600; text-decoration: none; cursor: pointer;"
+                > Source </a>
+            </div>
+        </main>
+    </body>
+</html>

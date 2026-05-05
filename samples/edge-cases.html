@@ -1,0 +1,49 @@
+<!doctype html>
+<!--
+    까다로운 케이스 모음.
+    각 div의 주석에 "이렇게 보여야 한다"를 적어둠.
+-->
+<html>
+<body>
+    <!-- (1) 빈 style — 토큰 0개 -->
+    <div style=""></div>
+
+    <!-- (2) 따옴표 두 종류 — single / double 모두 처리 -->
+    <div style='display: flex; gap: 8px;'></div>
+    <div style="display: flex; gap: 8px;"></div>
+
+    <!-- (3) 값 안의 따옴표 — font-family에 작은따옴표 -->
+    <div style="font-family: 'Helvetica Neue', Arial, sans-serif; quotes: '«' '»';"></div>
+
+    <!-- (4) URL과 data URI — 콜론·세미콜론·콤마가 값 안에 다수 존재 -->
+    <div style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot;/>'); background-size: cover;"></div>
+
+    <!-- (5) calc / clamp — 괄호 깊이, 사칙연산 -->
+    <div style="width: calc(100% - 16px); padding: clamp(8px, 2vw, 24px); margin: max(16px, 2rem) auto;"></div>
+
+    <!-- (6) trailing semicolon 없음 — 마지막 declaration도 잡혀야 -->
+    <div style="display: block; color: red"></div>
+
+    <!-- (7) 공백만 있는 declaration — skip 되어야 -->
+    <div style=";; display: flex ;; ; gap: 8px ;;"></div>
+
+    <!-- (8) value가 비어있는 declaration — invalid이지만 crash 없이 처리되어야 -->
+    <div style="color: ; padding: 4px;"></div>
+
+    <!-- (9) -webkit- 벤더 prefix — surface/typography 카테고리에 잡혀야 -->
+    <div style="-webkit-mask-image: linear-gradient(180deg, #000, transparent); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;"></div>
+
+    <!-- (10) custom property + var() 참조 다중 -->
+    <div style="--bg: #fef3c7; --fg: #92400e; --r: 8px; background: var(--bg); color: var(--fg); border-radius: var(--r); padding: calc(var(--r) * 2);"></div>
+
+    <!-- (11) !important — 카테고리 분류에 영향 없음 -->
+    <div style="display: none !important; padding: 0 !important;"></div>
+
+    <!-- (12) Angular property binding / ngStyle — 패턴 매칭 -->
+    <div [style]="'color: red; padding: 8px;'"></div>
+    <div ngStyle="color: red; padding: 8px;"></div>
+
+    <!-- (13) Vue :style — 패턴 매칭 (실제 Vue 파일이 아니라도 매칭은 되어야) -->
+    <div :style="'color: blue; gap: 4px;'"></div>
+</body>
+</html>
