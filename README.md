@@ -8,9 +8,20 @@
 [![license](https://img.shields.io/github/license/juncha9/style-pastel?color=green)](./LICENSE.md)
 [![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-ea4aaa?logo=github-sponsors)](https://github.com/sponsors/juncha9)
 
-Inline `style="..."` is a wall of `prop: value;` pairs. Pastel helps you read it — every declaration tinted by category, so layout, box, surface, and typography sort themselves out before your eyes do.
+![Usage](https://raw.githubusercontent.com/juncha9/style-pastel/main/docs/imgs/main.png)
 
-So `display: flex; align-items: center; gap: 16px; padding: 12px 8px; background: #fff; border-radius: 8px; font-size: 14px; font-weight: 500;` stops reading like noise — each declaration is painted in its category's hue, and your eyes group them automatically.
+Inline styles read flat — every property looks the same. Style Pastel tints each declaration by category so they fall into visual groups at a glance:
+
+![Usage](https://raw.githubusercontent.com/juncha9/style-pastel/main/docs/imgs/example.png)  
+
+- **Layout** (blue) — `display`, `align-items`, `gap`, …
+- **Box** (emerald) — `padding`, `margin`, `width`, …
+- **Surface** (pink) — `background`, `border-radius`, `box-shadow`, …
+- **Typography** (amber) — `font-size`, `color`, `line-height`, …
+- **Motion** (violet) — `transition`, `transform`, …
+- **Other** (gray) — `cursor`, `user-select`, `pointer-events`, …
+
+Works in both `style="..."` strings and JSX `style={{ ... }}` objects (kebab-case and camelCase classify the same way).
 
 ## Features
 
